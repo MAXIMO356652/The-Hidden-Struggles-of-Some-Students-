@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Same Age, Different Lifestyle — a reflective chapter by THE WAITING-MAXIMO about student life, hardship, responsibility, and the fight for a better future.">
+  <title>Same Age, Different Lifestyle | THE WAITING-MAXIMO</title>
+  <style>
+    :root {
+      --bg: #101010;
+      --panel: #171717;
+      --text: #eee8dc;
+      --muted: #bdb5a7;
+      --gold: #d6b36a;
+      --line: #3b3325;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.85;
+      font-size: 18px;
+    }
+    .topline {
+      height: 4px;
+      background: linear-gradient(90deg, #6e5427, var(--gold), #6e5427);
+    }
+    header {
+      padding: 46px 20px 38px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      background: radial-gradient(ellipse at top, #272117 0%, var(--bg) 68%);
+    }
+    .brand {
+      color: var(--gold);
+      font: 700 12px/1.5 Arial, sans-serif;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 24px auto 12px;
+      font-size: clamp(2.15rem, 7vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: .015em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      color: var(--gold);
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-style: italic;
+      margin: 0 auto;
+    }
+    .intro {
+      max-width: 720px;
+      margin: 26px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      font-style: italic;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 18px 16px;
+      border-bottom: 1px solid #28231b;
+    }
+    button {
+      cursor: pointer;
+      border: 1px solid #66532e;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--gold);
+      padding: 10px 16px;
+      font: 600 13px Arial, sans-serif;
+      transition: background .2s ease, color .2s ease;
+    }
+    button:hover, button:focus-visible {
+      background: var(--gold);
+      color: #15120c;
+      outline: none;
+    }
+    main {
+      width: min(100% - 36px, 760px);
+      margin: 0 auto;
+      padding: 28px 0 70px;
+    }
+    .epigraph {
+      border-left: 2px solid var(--gold);
+      padding: 8px 0 8px 20px;
+      color: var(--muted);
+      font-style: italic;
+      margin: 18px 0 42px;
+    }
+    h2 {
+      color: var(--gold);
+      font-size: clamp(1.35rem, 4vw, 1.8rem);
+      line-height: 1.3;
+      font-weight: 500;
+      margin: 48px 0 18px;
+    }
+    p { margin: 0 0 1.25em; }
+    strong { color: #f4d995; font-weight: 700; }
+    .pullquote {
+      margin: 34px 0;
+      padding: 20px 22px;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--gold);
+      font-size: 1.16rem;
+      font-style: italic;
+      text-align: center;
+    }
+    .closing {
+      margin-top: 54px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    .closing .motto {
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 22px;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 18px 34px;
+      text-align: center;
+      color: var(--muted);
+      font: 12px/1.8 Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    footer strong { color: var(--gold); }
+    body.large-text { font-size: 21px; }
+    @media (max-width: 480px) {
+      body { font-size: 17px; line-height: 1.8; }
+      header { padding-top: 36px; }
+      main { width: min(100% - 30px, 760px); }
+      .epigraph { padding-left: 14px; }
+    }
+    @media print {
+      body { background: #fff; color: #111; font-size: 12pt; }
+      header { background: #fff; border-color: #ccc; }
+      .brand, h2, strong, .subtitle, .closing .motto { color: #6b4d13; }
+      .toolbar, .topline { display: none; }
+      main { width: 100%; }
+      .pullquote { background: #f7f3ea; color: #4e3b16; }
+      footer { color: #555; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="brand">THE WAITING-MAXIMO</div>
+    <h1>Same Age,<br>Different Lifestyle</h1>
+    <p class="subtitle">Same Experience, Different Time</p>
+    <p class="intro">Some of us are not only studying for a better future. We are trying to survive the present while preparing for it.</p>
+  </header>
+
+  <nav class="toolbar" aria-label="Reading tools">
+    <button id="textSize" type="button" aria-pressed="false">Increase text size</button>
+    <button id="share" type="button">Share this chapter</button>
+    <button id="print" type="button">Print / Save as PDF</button>
+  </nav>
+
+  <main>
+    <div class="epigraph">There is a side of being a student that people rarely talk about.</div>
+
+    <p>People see us going to school, sitting in classrooms, carrying books, writing notes, and preparing for examinations. They see students who are expected to learn, understand, pass, and move forward in life. But what they do not always see is what happens outside the classroom.</p>
+
+    <p>They do not see the responsibilities we carry before the first lesson begins. They do not see the thoughts that occupy our minds while a lecturer is explaining something important. They do not see the financial pressure, the empty stomachs, the unpaid bills, or the quiet fear of not knowing how we will manage tomorrow.</p>
+
+    <p>And sometimes, they wonder why we struggle.</p>
+
+    <p>Perhaps they forget that intelligence does not remove hardship. Being a good student does not automatically put food on the table. Having dreams does not mean having the resources to pursue them peacefully.</p>
+
+    <div class="pullquote"><strong>To some of us, school is difficult not because we are incapable of learning, but because life demands our attention even when we are trying to concentrate.</strong></div>
+
+    <p>Imagine sitting in a classroom, trying to understand a lesson while thinking about transport money for the journey home. Imagine taking notes while wondering where your next meal will come from. Imagine spending the entire day at school without eating, yet still expecting yourself to concentrate, participate, and perform well in an examination.</p>
+
+    <p>You want to learn. You want to understand. You want to become someone you can be proud of.</p>
+
+    <p>But your body is tired, your mind is occupied, and your circumstances are demanding more from you than you can comfortably give.</p>
+
+    <p>That is a different kind of struggle.</p>
+
+    <p>It is the kind that does not appear on a school timetable. There is no period allocated for financial worries. No lecturer pauses a lesson because you have not eaten. No examination paper asks whether you had peace of mind while preparing for it.</p>
+
+    <p>The world simply expects you to perform.</p>
+
+    <p>And you try.</p>
+
+    <p>Not because everything is fine, but because your future still matters, even when your present is difficult.</p>
+
+    <h2>The Responsibilities We Never Planned For</h2>
+
+    <p>One of the hardest things about life is being forced to grow up in areas where you still need support.</p>
+
+    <p>At an age when some people are concentrating mainly on their education, others are thinking about rent, food, electricity, transport, and the ordinary expenses required to keep life moving.</p>
+
+    <p>Some students go home knowing that there is someone who will ask whether they have eaten. Someone who will provide transport money. Someone who will notice when they are struggling and offer a helping hand.</p>
+
+    <p>Others return to their rooms with the same worries they carried to school.</p>
+
+    <p>They must find a way to survive, prepare for the next day, complete assignments, and somehow gather enough strength to repeat the process.</p>
+
+    <p>Sometimes, there is nobody to turn to. Sometimes, asking for help becomes emotionally exhausting. Sometimes, you explain your situation, hoping someone will understand, only to discover that life is still waiting for you to solve your own problems.</p>
+
+    <p>And so, you learn to carry things quietly.</p>
+
+    <p>You learn to calculate your money before spending it. You learn to distinguish between what you need and what you wish you could afford. You learn to make difficult decisions because having a choice and being able to afford that choice are two different things.</p>
+
+    <p>Eventually, survival becomes part of your education.</p>
+
+    <p>You are learning from your lecturers, but you are also learning from circumstances. You are learning patience from delays, responsibility from necessity, and endurance from days you never imagined would be so difficult.</p>
+
+    <p>Still, there are moments when you wish life could be a little kinder.</p>
+
+    <p>Not because you are lazy. Not because you are unwilling to work. But because carrying everything alone can become exhausting.</p>
+
+    <p>Even a strong person needs somewhere to rest.</p>
+
+    <h2>We Are Strong, But We Get Tired</h2>
+
+    <p>I believe there is a difference between being strong and never feeling weak.</p>
+
+    <p>Sometimes, people praise us for being strong without understanding what that strength costs us.</p>
+
+    <p>They see us showing up every day and assume we are managing. They see us smiling and assume we are happy. They see us continuing with school and assume we have everything under control.</p>
+
+    <p>But continuing does not always mean you are okay.</p>
+
+    <p>Sometimes, continuing simply means you cannot afford to stop.</p>
+
+    <p>There are days when you sit quietly, not because you have nothing to say, but because you have too much on your mind. There are days when you feel drained before the day has even ended. There are nights when you want to rest, but your responsibilities remind you that tomorrow will come with its own demands.</p>
+
+    <p>And the hardest part is that you must still believe in yourself.</p>
+
+    <p>You must remind yourself why you started. You must remember the future you want to build. You must convince yourself that the sacrifices you are making today will mean something tomorrow.</p>
+
+    <p>Some days, that belief comes naturally.</p>
+
+    <p>On other days, you must fight to keep it alive.</p>
+
+    <p>I am learning that strength is not always loud. Sometimes, strength is attending class when life has given you every reason to stay in bed. Sometimes, it is opening your books when your mind is exhausted. Sometimes, it is admitting that things are difficult without allowing those difficulties to define the person you are becoming.</p>
+
+    <p>And sometimes, strength is simply making it through the day.</p>
+
+    <p>That, too, deserves recognition.</p>
+
+    <h2>Same Age, Different Lifestyle</h2>
+
+    <p>We may be the same age, wear similar clothes, study the same subjects, and sit in the same classroom, yet experience life in completely different ways.</p>
+
+    <p>One student may be worried about an upcoming examination. Another may be worried about the examination and where the money for tomorrow's transport will come from.</p>
+
+    <p>One may be studying in a peaceful environment. Another may be studying while trying to settle the worries of an entire household.</p>
+
+    <p>One may struggle to understand a topic because it is academically challenging. Another may struggle with the same topic because the mind that should be learning is occupied with survival.</p>
+
+    <p>We are all students, but we do not all begin from the same position.</p>
+
+    <p>This is why I have learned to be careful about judging people.</p>
+
+    <p>You never really know what someone had to overcome just to sit beside you. You do not know whether they ate before coming to school. You do not know how many times they have had to choose between meeting an immediate need and preparing for their future.</p>
+
+    <p>You may see a student who is falling behind. Life may see someone who is fighting several battles at once.</p>
+
+    <p>Of course, hardship does not make every failure acceptable, and circumstances do not remove our responsibility to keep trying. But understanding someone's struggle can help us judge them with greater fairness.</p>
+
+    <p>Sometimes, what looks like a lack of effort is a person trying to function under pressure that others cannot see.</p>
+
+    <div class="pullquote">Same age, different lifestyle. Same experience, different time. Same classroom, different battles.</div>
+
+    <p>We may be walking towards similar goals, but the weight we carry along the way is not always the same.</p>
+
+    <h2>I Am Still Trying to Build My Future</h2>
+
+    <p>As a student, I know that education matters. I know that the knowledge I gain today can open doors tomorrow. I know that passing examinations is important, but actually understanding what I study is even more valuable.</p>
+
+    <p>I do not want to leave school with certificates alone. I want to leave with knowledge, skills, discipline, and the ability to stand on my own.</p>
+
+    <p>But wanting a better future does not make the present less painful.</p>
+
+    <p>There is a particular kind of pressure that comes with trying to improve your life while struggling to maintain it. You are expected to invest in tomorrow while finding a way to survive today.</p>
+
+    <p>You need time to study, but you also need money to live. You need rest, but your responsibilities do not always allow it. You need peace of mind, but your circumstances keep demanding solutions.</p>
+
+    <p>Sometimes, you wonder how much easier learning would be if you could concentrate on education without constantly worrying about the basic things required to live.</p>
+
+    <p>You wonder how much more you could accomplish if your energy were not divided between studying and surviving.</p>
+
+    <p>Yet, despite everything, the dream remains.</p>
+
+    <p>I still want to learn. I still want to grow. I still want to become better than I was yesterday. I still believe that my circumstances today should not have the final say in the life I build tomorrow.</p>
+
+    <p>I may not have everything I need, but I want to make the most of what I have.</p>
+
+    <p>I may become tired, but I do not want tiredness to convince me that my dreams are impossible.</p>
+
+    <p>I may need help, and there is no shame in that. Independence should not mean pretending that human beings can survive without support.</p>
+
+    <p>I am a student, but I am also a person with responsibilities, emotions, needs, and limits.</p>
+
+    <p>And I am learning to acknowledge all of them.</p>
+
+    <h2>A Note to Those Who Understand</h2>
+
+    <p>To every student carrying responsibilities that seem too heavy for their age, I hope you remember that your struggle does not make you less intelligent.</p>
+
+    <p>To those who attend classes on empty stomachs, worry about transport money, and study while carrying financial pressure, I hope you find moments of relief along the way.</p>
+
+    <p>To those who smile in public but fight silent battles in private, I hope you meet people who do not require you to explain your pain before they offer kindness.</p>
+
+    <p>And to those who have the privilege of support, please do not assume that everyone has the same foundation you have. A little understanding can mean more than you realise.</p>
+
+    <p>We do not all need the same kind of help. Sometimes, someone needs encouragement. Someone needs an opportunity. Someone needs practical assistance. Someone simply needs to be treated with patience rather than judged by the results they produce.</p>
+
+    <p>We are not asking life to become effortless. We are asking for the opportunity to work towards our dreams without being crushed by the weight of merely surviving.</p>
+
+    <p>Because education is already a demanding journey. For some of us, the journey becomes even harder when we must carry the cost of living on our own shoulders.</p>
+
+    <p>And still, we show up.</p>
+
+    <p>We open our books. We attend our lessons. We write our examinations. We make mistakes, learn, and try again.</p>
+
+    <p>Not every day will be productive. Not every examination will reflect our full potential. Not every sacrifice will produce an immediate reward.</p>
+
+    <p>But our circumstances do not erase our potential, and our struggles do not cancel our right to dream.</p>
+
+    <h2>Still Waiting. Still Learning. Still Becoming.</h2>
+
+    <p>Perhaps one day, life will become a little easier. Perhaps one day, we will sit in a classroom without worrying about the meal we missed. Perhaps one day, we will study without calculating how much money remains in our pockets.</p>
+
+    <p>Until then, we must keep working towards the lives we hope to live, while remembering that we are human beings—not machines built to endure pressure without feeling its effects.</p>
+
+    <p>We must learn to be disciplined without being cruel to ourselves. We must remain determined without pretending that we never need help. And we must remember that asking for support is not the opposite of strength.</p>
+
+    <p>I am still a student. I am still learning. I am still trying to understand both the lessons in my books and the lessons life keeps placing before me.</p>
+
+    <p>Some days, the classroom teaches me about my course. Other days, life teaches me about patience, sacrifice, responsibility, and the price of pursuing a better future.</p>
+
+    <p>I cannot pretend that the journey is easy.</p>
+
+    <p>But I am here, and I am trying.</p>
+
+    <p>Maybe that is not the whole victory I dream of, but it is part of the journey towards it.</p>
+
+    <div class="closing">
+      <p><strong>Same age, different lifestyle.<br>Same experience, different time.<br>Same classroom, different battles.</strong></p>
+      <p>We are not all fighting the same war, even when we are pursuing the same dream.</p>
+      <p>And some of us are fighting to build a future while doing everything we can to survive the present.</p>
+      <p class="motto">Still waiting. Still learning.<br>Still becoming. Still writing.</p>
+      <p>— THE WAITING-MAXIMO</p>
+    </div>
+  </main>
+
+  <footer>
+    <strong>THE WAITING-MAXIMO</strong><br>
+    A reflection on student life, hardship, and hope.<br>
+    © THE WAITING-MAXIMO
+  </footer>
+
+  <script>
+    const textSizeButton = document.getElementById('textSize');
+    textSizeButton.addEventListener('click', () => {
+      const enabled = document.body.classList.toggle('large-text');
+      textSizeButton.setAttribute('aria-pressed', String(enabled));
+      textSizeButton.textContent = enabled ? 'Restore text size' : 'Increase text size';
+    });
+
+    document.getElementById('print').addEventListener('click', () => window.print());
+
+    document.getElementById('share').addEventListener('click', async () => {
+      const shareData = {
+        title: document.title,
+        text: 'Read “Same Age, Different Lifestyle” by THE WAITING-MAXIMO.'
+      };
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (error) {
+          if (error.name !== 'AbortError') alert('Sharing is not available right now. Copy the page link from your browser.');
+        }
+      } else if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          alert('Page link copied. You can now share it with your fellow students.');
+        } catch {
+          prompt('Copy this page link:', window.location.href);
+        }
+      } else {
+        prompt('Copy this page link:', window.location.href);
+      }
+    });
+  </script>
+</body>
+</html>
